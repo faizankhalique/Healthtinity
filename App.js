@@ -35,7 +35,9 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.backgroundStyle}>
-    <Text>Wellcome to Healthtinity</Text>
+    <Text 
+    style={{fontFamily:"Rubik-SemiBold",color:"black"}}
+    >Wellcome to Healthtinity</Text>
     </SafeAreaView>
   );
 };
