@@ -1,52 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  StyleSheet,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+import NavigationService from './src/navigation/NavigationService';
+import AppNavigator from "./src/navigation/AppNavigator";
+import myTheme from "./src/navigation/navigationTheme"
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
-
   return (
-    <SafeAreaView style={styles.backgroundStyle}>
-    <Text 
-    style={{fontFamily:"Rubik-SemiBold",color:"black"}}
-    >Wellcome to Healthtinity</Text>
-    </SafeAreaView>
+    <View style={{flex:1}}>
+      <NavigationContainer
+        ref={navigatorRef => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+        theme={myTheme}
+      >
+        <AppNavigator />
+      </NavigationContainer>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  backgroundStyle: {
-   flex:1,
-   justifyContent:"center",
-   alignItems:"center"
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
   },
   sectionTitle: {
     fontSize: 24,

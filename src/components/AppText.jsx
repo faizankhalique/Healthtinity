@@ -164,172 +164,218 @@ export function Label(props) {
 export function NumberText(props) {
   return <Text {...props} style={[textStyles.numbers, props.style]} />
 }
-
+{/* <Text style={{fontFamily:"Rubik-Light"}}>Light!</Text>
+<Text style={{fontFamily:"Rubik-Regular"}}>Regular!</Text>
+<Text style={{fontFamily:"Rubik-Medium"}}>Medium!</Text>
+<Text style={{fontFamily:"Rubik-Bold"}}>Bold!</Text>
+<Text style={{fontFamily:"Rubik-ExtraBold"}}>ExtraBold!</Text>
+<Text style={{fontFamily:"Rubik-SemiBold"}}>SemiBold!</Text> */}
 export const getFontSize = (fontSize) => RFValue(fontSize)
 export const textStyles = StyleSheet.create({
   heading1: {
     fontSize: getFontSize(34),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   heading2: {
     fontSize: getFontSize(28),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   heading3: {
     fontSize: getFontSize(24),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   heading4: {
     fontSize: getFontSize(20),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   heading5: {
     fontSize: getFontSize(16),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   heading6: {
     fontSize: getFontSize(14),
     color: theme.text.heading,
+    fontFamily:"Rubik-Bold",
   },
   body20: {
     fontSize: getFontSize(20),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body20Bold: {
     fontSize: getFontSize(20),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-SemiBold"
   },
   body19: {
     fontSize: getFontSize(19),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body19Bold: {
     fontSize: getFontSize(19),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-SemiBold"
   },
   body16: {
     fontSize: getFontSize(16),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body16Bold: {
     fontSize: getFontSize(16),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-SemiBold"
   },
   body17: {
     fontSize: getFontSize(17),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body17Bold: {
     fontSize: getFontSize(17),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-SemiBold"
   },
   body15: {
     fontSize: getFontSize(15),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body15Bold: {
     fontSize: getFontSize(15),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-SemiBold"
   },
   body14: {
     fontSize: getFontSize(14),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body13: {
     fontSize: getFontSize(13),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body12: {
     fontSize: getFontSize(12),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   body11: {
     fontSize: getFontSize(11),
     color: theme.text.primaryBody,
+    fontFamily:"Rubik-Regular"
   },
   label50: {
     fontSize: getFontSize(50),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label32: {
     fontSize: getFontSize(32),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label20: {
     fontSize: getFontSize(20),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label22: {
     fontSize: getFontSize(22),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label22Light: {
     fontSize: getFontSize(22),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label19: {
     fontSize: getFontSize(19),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label17: {
     fontSize: getFontSize(17),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label17Light: {
     fontSize: getFontSize(17),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label16: {
     fontSize: getFontSize(16),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label16Light: {
     fontSize: getFontSize(16),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label15: {
     fontSize: getFontSize(15),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label15Light: {
     fontSize: getFontSize(15),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label14: {
     fontSize: getFontSize(14),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label14Light: {
     fontSize: getFontSize(14),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label13: {
     fontSize: getFontSize(13),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label13Light: {
     fontSize: getFontSize(13),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label12: {
     fontSize: getFontSize(12),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label12Light: {
     fontSize: getFontSize(12),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label11Light: {
     fontSize: getFontSize(11),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label11: {
     fontSize: getFontSize(11),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label10: {
     fontSize: getFontSize(10),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label10Light: {
     fontSize: getFontSize(10),
@@ -338,21 +384,26 @@ export const textStyles = StyleSheet.create({
   label9: {
     fontSize: getFontSize(9),
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   label9Light: {
     fontSize: getFontSize(9),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label8: {
     fontSize: getFontSize(8),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label8Light: {
     fontSize: getFontSize(8),
     color: theme.text.label,
+    fontFmaily:"Rubik-Light"
   },
   label: {
     color: theme.text.label,
+    fontFamily:"Rubik-Medium"
   },
   numbers: {
     fontSize: getFontSize(22),

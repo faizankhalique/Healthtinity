@@ -29,16 +29,24 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: theme.custom.green,
-    height: wp(11),
+    height: wp(12.5),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(2),
     width: '100%',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+
+    elevation: 12,
   },
   text: {
     color: 'white',
     fontSize: getFontSize(14),
-    fontWeight: 'bold',
+    fontFamily: 'Rubik-Bold',
     textAlign: 'center',
   },
 });

@@ -99,6 +99,6 @@ export default {
     orange: ORANGE,
     gray: GRAY,
     light_green:"#00CCC0",
-    green:"#1A7F79"
+    green:"#308B85"
   },
 }
