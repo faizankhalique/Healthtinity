@@ -1,30 +1,19 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-// import HomeScreen from '../screens/Home/HomeScreen';
-// import ChooseAudioScreen from '../screens/ChooseAudio/ChooseAudioScreen';
-// import UploadClipsScreen from '../screens/UploadClips/UploadClipsScreen';
-// import AdjustScreen from '../screens/Adjust/AdjustScreen';
-// import DoneScreen from '../screens/Done/DoneScreen';
-// import BottomTabNavigator from './BottomTabNavigator';
+
+import TeacherBottomTabNavigator from './TeacherBottomTabNavigator';
+import StudentBottomTabNavigator from './StudentBottomTabNavigator';
 import WelcomeScreen from '../screens/Intro/WelcomeScreen';
 import WelcomeScreen2 from '../screens/Intro/WelcomeScreen2';
-// import LoginScreen from '../screens/Auth/LoginScreen';
-// import SignupScreen from '../screens/Auth/SignupScreen';
-// import ProfileScreen from '../screens/Profile/ProfileScreen';
-// import NotificationScreen from '../screens/Notifications/NotificationScreen';
+import LoginScreen from '../screens/Auth/LoginScreen';
+import SignupScreen from '../screens/Auth/SignupScreen';
+import EditProfileScreen from '../screens/Profile/EditProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen
-      name="WelcomeScreen2"
-      component={WelcomeScreen2}
-      options={{
-        headerShown: false,
-      }}
-    />
     <Stack.Screen
       name="WelcomeScreen"
       component={WelcomeScreen}
@@ -32,7 +21,14 @@ const AppNavigator = () => (
         headerShown: false,
       }}
     />
-    {/* <Stack.Screen
+     <Stack.Screen
+      name="WelcomeScreen2"
+      component={WelcomeScreen2}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
       name="LoginScreen"
       component={LoginScreen}
       options={{
@@ -47,19 +43,26 @@ const AppNavigator = () => (
       }}
     />
     <Stack.Screen
-      name="ProfileScreen"
-      component={ProfileScreen}
+      name="EditProfileScreen"
+      component={EditProfileScreen}
       options={{
         headerShown: false,
       }}
     />
     <Stack.Screen
-      name="Home"
-      component={BottomTabNavigator}
+      name="TeacherHome"
+      component={TeacherBottomTabNavigator}
       options={{
         headerShown: false,
       }}
-    /> */}
+    />
+    <Stack.Screen
+      name="StudentHome"
+      component={StudentBottomTabNavigator}
+      options={{
+        headerShown: false,
+      }}
+    />
     
   </Stack.Navigator>
 );

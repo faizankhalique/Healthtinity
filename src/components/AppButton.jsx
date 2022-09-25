@@ -14,12 +14,13 @@ import {
 import theme from '../config/theme';
 import {getFontSize} from './AppText';
 
-export default function AppButton({title, onPress, buttonStyles, textStyles}) {
+export default function AppButton({title, onPress, buttonStyles, textStyles,image,imageStyles}) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[styles.container, buttonStyles]}
       activeOpacity={0.6}>
+      {image&& <Image source={image} style={[styles.image, imageStyles]} resizeMode="contain"/>}
       <Text style={[styles.text, textStyles]}>{title}</Text>
     </TouchableOpacity>
   );
@@ -49,4 +50,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Rubik-Bold',
     textAlign: 'center',
   },
+  image:{
+    width:wp(6),
+    height:wp(6),
+    right:wp(2)
+  }
 });
