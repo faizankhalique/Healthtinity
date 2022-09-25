@@ -6,28 +6,30 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import theme from '../config/theme';
-import {Label14Light, Label16} from './AppText';
+import {Body22, Label16} from './AppText';
+import NavigationService from '../navigation/NavigationService';
 
-export default function AppHeader({title, image, onImagePress, step}) {
+export default function AppHeader({title, onImagePress}) {
   return (
     <>
       <View style={styles.container}>
-        <TouchableOpacity onPress={onImagePress}>
+        <TouchableOpacity
+          onPress={() => NavigationService.goBack()}
+          style={{
+            height: wp(8),
+            width: wp(8),
+            justifyContent: 'center',
+            // alignItems: 'center',
+          }}>
           <Image
-            source={image}
+            source={require('../assets/chevron-right.png')}
             resizeMode="contain"
-            style={{height: wp(3), width: wp(3)}}
+            style={{height: wp(6), width: wp(6)}}
           />
         </TouchableOpacity>
-        <Label14Light style={{color: 'white'}}>
-          <Label16
-            style={{
-              color: 'white',
-              fontWeight: '500',
-            }}>{`Step ${step}: `}</Label16>
+        <Body22 style={{color: theme.brand.primary, left: wp(4)}}>
           {title}
-        </Label14Light>
-        <View></View>
+        </Body22>
       </View>
     </>
   );
@@ -36,12 +38,12 @@ export default function AppHeader({title, image, onImagePress, step}) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    paddingTop: wp(8),
-    paddingBottom: wp(4),
-    backgroundColor: theme.custom.green,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    // paddingTop: wp(8),
+    // paddingBottom: wp(4),
+    // backgroundColor: theme.custom.green,
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
     flexDirection: 'row',
-    paddingHorizontal: wp(4),
+    // paddingHorizontal: wp(4),
   },
 });

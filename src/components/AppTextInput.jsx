@@ -31,13 +31,18 @@ const AppTextInput = ({
   onChangeText,
   value,
   isSearch,
+  placeholderStyles,
 }) => {
   const [isSecure, setIsSecure] = useState(password ? true : false);
 
   return (
     <View>
       {placeholder && (
-        <Label11Light style={{color: theme.custom.green, top: wp(2)}}>
+        <Label11Light
+          style={[
+            {color: theme.custom.green, top: wp(2)},
+            {...placeholderStyles},
+          ]}>
           {placeholder}
         </Label11Light>
       )}

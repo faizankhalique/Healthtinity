@@ -98,10 +98,8 @@ const ListItem = ({item}) => {
   return (
     <View
       style={{
-        backgroundColor:
-          Platform.OS === 'ios'
-            ? 'rgba(48, 139, 133, 0.4)'
-            : 'rgba(48, 139, 133, 0.15)',
+        backgroundColor: 'rgba(48, 139, 133, 0.15)',
+
         marginBottom: wp(2),
       }}>
       <Image
@@ -183,9 +181,11 @@ export default function HomeScreen() {
       </View>
       <AppTextInput
         textInputContainerStyle={{
-          backgroundColor: 'rgba(224, 238, 237, 1)',
+          backgroundColor:
+            Platform.OS === 'ios'
+              ? 'rgba(224, 238, 237, 0.8)'
+              : 'rgba(224, 238, 237, 1)',
         }}
-        // textInputStyle={{backgroundColor: 'rgba(224, 238, 237, 0.3)'}}
         isSearch={true}
         value={value}
         onChangeText={v => setValue(v)}

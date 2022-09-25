@@ -1,7 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-
 import TeacherBottomTabNavigator from './TeacherBottomTabNavigator';
 import StudentBottomTabNavigator from './StudentBottomTabNavigator';
 import WelcomeScreen from '../screens/Intro/WelcomeScreen';
@@ -9,6 +8,8 @@ import WelcomeScreen2 from '../screens/Intro/WelcomeScreen2';
 import LoginScreen from '../screens/Auth/LoginScreen';
 import SignupScreen from '../screens/Auth/SignupScreen';
 import EditProfileScreen from '../screens/Profile/EditProfileScreen';
+import TransactionHistory from '../screens/Profile/TransactionHistory';
+import ManageMyCard from '../screens/Profile/ManageMyCard';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ const AppNavigator = () => (
         headerShown: false,
       }}
     />
-     <Stack.Screen
+    <Stack.Screen
       name="WelcomeScreen2"
       component={WelcomeScreen2}
       options={{
@@ -43,8 +44,22 @@ const AppNavigator = () => (
       }}
     />
     <Stack.Screen
-      name="EditProfileScreen"
+      name="EditProfile"
       component={EditProfileScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="TransactionHistory"
+      component={TransactionHistory}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ManageMyCard"
+      component={ManageMyCard}
       options={{
         headerShown: false,
       }}
@@ -63,7 +78,6 @@ const AppNavigator = () => (
         headerShown: false,
       }}
     />
-    
   </Stack.Navigator>
 );
 
