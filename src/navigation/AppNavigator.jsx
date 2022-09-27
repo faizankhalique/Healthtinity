@@ -10,6 +10,7 @@ import SignupScreen from '../screens/Auth/SignupScreen';
 import EditProfileScreen from '../screens/Profile/EditProfileScreen';
 import TransactionHistory from '../screens/Profile/TransactionHistory';
 import ManageMyCard from '../screens/Profile/ManageMyCard';
+import ClassDetailScreen from '../screens/Classes/Student/ClassDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,13 @@ const AppNavigator = () => (
     <Stack.Screen
       name="StudentHome"
       component={StudentBottomTabNavigator}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ClassDetail"
+      component={ClassDetailScreen}
       options={{
         headerShown: false,
       }}

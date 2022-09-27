@@ -12,10 +12,9 @@ import theme from '../config/theme';
 import CustomTab from './CustomeTab';
 import HomeScreen from '../screens/Home/HomeScreen';
 import AttendanceScreen from '../screens/Attendance/AttendanceScreen';
-import ClassesScreen from '../screens/Classes/ClassesScreen';
+import ClassesScreen from '../screens/Classes/Student/StudentClassesScreen';
 import LeaveScreen from '../screens/Leave/LeaveScreen';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
-
 
 const Tab = createBottomTabNavigator();
 const getIconStyles = focused => {
@@ -38,10 +37,10 @@ function MyTabBar({state, descriptors, navigation}) {
     <View
       style={{
         flexDirection: 'row',
-        alignItems:"center",
+        alignItems: 'center',
         height: wp(19.5),
-        justifyContent: "space-around",
-        paddingHorizontal:wp(2),
+        justifyContent: 'space-around',
+        paddingHorizontal: wp(2),
         // paddingVertical:wp(4),
         // alignItems: 'center',
 
@@ -52,7 +51,7 @@ function MyTabBar({state, descriptors, navigation}) {
         shadowOpacity: 0.58,
         shadowRadius: 16.0,
         elevation: 24,
-        backgroundColor:theme.brand.primary
+        backgroundColor: theme.brand.primary,
       }}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
@@ -93,14 +92,12 @@ function MyTabBar({state, descriptors, navigation}) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            key={route.name}
-            >
-           
+            key={route.name}>
             {route.name === 'Attendance' ? (
               <CustomTab
                 isFocused={isFocused}
                 image={require('../assets/attendance.png')}
-                 activeImage={require('../assets/attendanceActive.png')}
+                activeImage={require('../assets/attendanceActive.png')}
                 title="Attendance"
               />
             ) : null}
@@ -112,7 +109,7 @@ function MyTabBar({state, descriptors, navigation}) {
                 title="Classes"
               />
             ) : null}
-             {route.name === 'Home' ? (
+            {route.name === 'Home' ? (
               <CustomTab
                 isFocused={isFocused}
                 image={require('../assets/home.png')}

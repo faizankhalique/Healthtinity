@@ -9,10 +9,10 @@ import theme from '../config/theme';
 import {Body22, Label16} from './AppText';
 import NavigationService from '../navigation/NavigationService';
 
-export default function AppHeader({title, onImagePress}) {
+export default function AppHeader({title, containerStyles, titleStyles}) {
   return (
     <>
-      <View style={styles.container}>
+      <View style={[styles.container, {...containerStyles}]}>
         <TouchableOpacity
           onPress={() => NavigationService.goBack()}
           style={{
@@ -27,7 +27,8 @@ export default function AppHeader({title, onImagePress}) {
             style={{height: wp(6), width: wp(6)}}
           />
         </TouchableOpacity>
-        <Body22 style={{color: theme.brand.primary, left: wp(4)}}>
+        <Body22
+          style={[{color: theme.brand.primary, left: wp(4)}, {...titleStyles}]}>
           {title}
         </Body22>
       </View>
