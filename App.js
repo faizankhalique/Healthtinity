@@ -1,24 +1,19 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-  StyleSheet,
-} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import {SafeAreaView, View, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 import NavigationService from './src/navigation/NavigationService';
-import AppNavigator from "./src/navigation/AppNavigator";
-import myTheme from "./src/navigation/navigationTheme"
+import AppNavigator from './src/navigation/AppNavigator';
+import myTheme from './src/navigation/navigationTheme';
 
 const App = () => {
   return (
-    <View style={{flex:1}}>
+    <View style={{flex: 1}}>
       <NavigationContainer
         ref={navigatorRef => {
           NavigationService.setTopLevelNavigator(navigatorRef);
         }}
-        theme={myTheme}
-      >
+        theme={myTheme}>
         <AppNavigator />
       </NavigationContainer>
     </View>

@@ -165,7 +165,8 @@ export default function LeaveScreen() {
         style={{
           flex: 1,
           paddingHorizontal: wp(6),
-        }}>
+        }}
+        showsVerticalScrollIndicator={false}>
         <ClassItem
           fillDate={'Thurs 20 Dec 2021'}
           title={'Casual Leave'}

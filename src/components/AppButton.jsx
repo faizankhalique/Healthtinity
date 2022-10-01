@@ -14,13 +14,26 @@ import {
 import theme from '../config/theme';
 import {getFontSize} from './AppText';
 
-export default function AppButton({title, onPress, buttonStyles, textStyles,image,imageStyles}) {
+export default function AppButton({
+  title,
+  onPress,
+  buttonStyles,
+  textStyles,
+  image,
+  imageStyles,
+}) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[styles.container, buttonStyles]}
       activeOpacity={0.6}>
-      {image&& <Image source={image} style={[styles.image, imageStyles]} resizeMode="contain"/>}
+      {image && (
+        <Image
+          source={image}
+          style={[styles.image, imageStyles]}
+          resizeMode="contain"
+        />
+      )}
       <Text style={[styles.text, textStyles]}>{title}</Text>
     </TouchableOpacity>
   );
@@ -37,12 +50,12 @@ const styles = StyleSheet.create({
     width: '100%',
     shadowOffset: {
       width: 0,
-      height: 6,
+      height: 2,
     },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
 
-    elevation: 12,
+    elevation: 4,
   },
   text: {
     color: 'white',
@@ -50,9 +63,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Rubik-Bold',
     textAlign: 'center',
   },
-  image:{
-    width:wp(6),
-    height:wp(6),
-    right:wp(2)
-  }
+  image: {
+    width: wp(6),
+    height: wp(6),
+    right: wp(2),
+  },
 });

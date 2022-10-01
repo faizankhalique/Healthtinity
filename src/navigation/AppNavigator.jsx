@@ -11,6 +11,10 @@ import EditProfileScreen from '../screens/Profile/EditProfileScreen';
 import TransactionHistory from '../screens/Profile/TransactionHistory';
 import ManageMyCard from '../screens/Profile/ManageMyCard';
 import ClassDetailScreen from '../screens/Classes/Student/ClassDetailScreen';
+import PackageDescriptionScreen from '../screens/Package/PackageDescriptionScreen';
+import PackageSelectionScreen from '../screens/Package/PackageSelectionScreen';
+import TermsAndConditionsScreen from '../screens/Package/TermsAndConditionsScreen';
+import PaymentSuccessScreen from '../screens/Package/PaymentSuccessScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +86,34 @@ const AppNavigator = () => (
     <Stack.Screen
       name="ClassDetail"
       component={ClassDetailScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="PackageDescription"
+      component={PackageDescriptionScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="PackageSelection"
+      component={PackageSelectionScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="TermsAndConditions"
+      component={TermsAndConditionsScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="PaymentSuccess"
+      component={PaymentSuccessScreen}
       options={{
         headerShown: false,
       }}
