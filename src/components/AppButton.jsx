@@ -21,11 +21,45 @@ export default function AppButton({
   textStyles,
   image,
   imageStyles,
+  variant,
+  noShadow = false,
 }) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, buttonStyles]}
+      style={[
+        styles.container,
+        {
+          backgroundColor:
+            variant == 'outlined' ? 'transparent' : theme.custom.green,
+          borderColor: variant == 'outlined' ? theme.custom.green : '',
+          borderWidth: variant == 'outlined' ? 1 : 0,
+          borderRadius: variant == 'outlined' ? wp(1) : wp(2),
+        },
+        noShadow
+          ? {
+              shadowColor: '#000',
+              shadowOffset: {
+                width: 0,
+                height: 1,
+              },
+              shadowOpacity: 0.18,
+              shadowRadius: 1.0,
+
+              elevation: 1,
+            }
+          : {
+              shadowOffset: {
+                width: 0,
+                height: 2,
+              },
+              shadowOpacity: 0.23,
+              shadowRadius: 2.62,
+
+              elevation: 4,
+            },
+        buttonStyles,
+      ]}
       activeOpacity={0.6}>
       {image && (
         <Image
@@ -34,7 +68,14 @@ export default function AppButton({
           resizeMode="contain"
         />
       )}
-      <Text style={[styles.text, textStyles]}>{title}</Text>
+      <Text
+        style={[
+          styles.text,
+          {color: variant == 'outlined' ? theme.custom.green : 'white'},
+          textStyles,
+        ]}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -48,14 +89,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: wp(2),
     width: '100%',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-
-    elevation: 4,
   },
   text: {
     color: 'white',

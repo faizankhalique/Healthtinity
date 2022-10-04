@@ -15,6 +15,9 @@ import PackageDescriptionScreen from '../screens/Package/PackageDescriptionScree
 import PackageSelectionScreen from '../screens/Package/PackageSelectionScreen';
 import TermsAndConditionsScreen from '../screens/Package/TermsAndConditionsScreen';
 import PaymentSuccessScreen from '../screens/Package/PaymentSuccessScreen';
+import ClassHistory from '../screens/Classes/Teacher/ClassHistory';
+import WaitlistScreen from '../screens/Classes/Teacher/WaitlistScreen';
+import BookingScreen from '../screens/Classes/Teacher/BookingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -114,6 +117,27 @@ const AppNavigator = () => (
     <Stack.Screen
       name="PaymentSuccess"
       component={PaymentSuccessScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ClassHistory"
+      component={ClassHistory}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="Waitlist"
+      component={WaitlistScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="BookingScreen"
+      component={BookingScreen}
       options={{
         headerShown: false,
       }}
