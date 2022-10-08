@@ -9,7 +9,13 @@ import theme from '../config/theme';
 import {Body22, Label16} from './AppText';
 import NavigationService from '../navigation/NavigationService';
 
-export default function AppHeader({title, containerStyles, titleStyles}) {
+export default function AppHeader({
+  title,
+  containerStyles,
+  titleStyles,
+  isWhite,
+  iconStyles,
+}) {
   return (
     <>
       <View style={[styles.container, {...containerStyles}]}>
@@ -21,14 +27,25 @@ export default function AppHeader({title, containerStyles, titleStyles}) {
             justifyContent: 'center',
             // alignItems: 'center',
           }}>
-          <Image
-            source={require('../assets/chevron-right.png')}
-            resizeMode="contain"
-            style={{height: wp(6), width: wp(6)}}
-          />
+          {isWhite ? (
+            <Image
+              source={require('../assets/chevron-right-white.png')}
+              resizeMode="contain"
+              style={[{height: wp(6), width: wp(6)}, {...iconStyles}]}
+            />
+          ) : (
+            <Image
+              source={require('../assets/chevron-right.png')}
+              resizeMode="contain"
+              style={[{height: wp(6), width: wp(6)}, {...iconStyles}]}
+            />
+          )}
         </TouchableOpacity>
         <Body22
-          style={[{color: theme.brand.primary, left: wp(4)}, {...titleStyles}]}>
+          style={[
+            {color: isWhite ? 'white' : theme.brand.primary, left: wp(4)},
+            {...titleStyles},
+          ]}>
           {title}
         </Body22>
       </View>

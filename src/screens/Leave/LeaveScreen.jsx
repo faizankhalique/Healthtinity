@@ -23,7 +23,7 @@ import {
 import theme from '../../config/theme';
 import AppButton from '../../components/AppButton';
 
-export default function LeaveScreen() {
+export default function LeaveScreen({navigation}) {
   const [active, setActive] = useState('All');
   const LeaveButton = ({title}) => {
     return (
@@ -138,7 +138,7 @@ export default function LeaveScreen() {
           }}>
           Leaves
         </Body22>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('NewLeave', null)}>
           <Image
             source={require('../../assets/plus.png')}
             resizeMode="contain"

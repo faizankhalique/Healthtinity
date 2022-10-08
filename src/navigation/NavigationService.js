@@ -1,9 +1,9 @@
-import {CommonActions} from '@react-navigation/native'
+import {CommonActions} from '@react-navigation/native';
 
-let _navigator
+let _navigator;
 
 function setTopLevelNavigator(navigatorRef) {
-  _navigator = navigatorRef
+  _navigator = navigatorRef;
 }
 
 function navigate(routeName, params) {
@@ -12,14 +12,14 @@ function navigate(routeName, params) {
       name: routeName,
       params,
     }),
-  )
+  );
 }
 
 function goBack() {
-  _navigator.dispatch(CommonActions.goBack())
+  _navigator.dispatch(CommonActions.goBack());
 }
 function setParams(params) {
-  _navigator.dispatch(CommonActions.setParams(params))
+  _navigator.dispatch(CommonActions.setParams(params));
 }
 function reset() {
   _navigator.dispatch(
@@ -27,7 +27,7 @@ function reset() {
       index: 0,
       routes: [{name: 'Home'}],
     }),
-  )
+  );
 }
 export default {
   navigate,
@@ -35,4 +35,4 @@ export default {
   goBack,
   setParams,
   reset,
-}
+};

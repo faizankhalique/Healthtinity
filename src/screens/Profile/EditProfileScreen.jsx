@@ -54,23 +54,22 @@ export default function LoginScreen() {
     if (!lastName) {
       setError('Please enter last Name');
       return;
-    }else if (!date) {
-        setError('Please enter Date of Birth');
-        return;
-      }
-    else if (!phoneNumber) {
+    } else if (!date) {
+      setError('Please enter Date of Birth');
+      return;
+    } else if (!phoneNumber) {
       setError('Please enter Phone Number');
       return;
-    }else if (!homeAddress) {
-        setError('Please enter Home Address');
-        return;
-      }else if (!emergencyContactName) {
-        setError('Please enter Emergency Contact Name');
-        return;
-      }else if (!emergencyContactNumber) {
-        setError('Please enter Emergency Contact Number');
-        return;
-      } else {
+    } else if (!homeAddress) {
+      setError('Please enter Home Address');
+      return;
+    } else if (!emergencyContactName) {
+      setError('Please enter Emergency Contact Name');
+      return;
+    } else if (!emergencyContactNumber) {
+      setError('Please enter Emergency Contact Number');
+      return;
+    } else {
       setFirstName('');
       setLastName('');
       setHomeAddress('');
@@ -159,7 +158,7 @@ export default function LoginScreen() {
           <AppTextInput
             placeholder={'Phone Number'}
             value={phoneNumber}
-            keyboardType={"phone-pad"}
+            keyboardType={'phone-pad'}
             onChangeText={v => {
               setPhoneNumber(v);
               setError('');
@@ -184,7 +183,7 @@ export default function LoginScreen() {
           <AppTextInput
             placeholder={'Emergency Contact Number'}
             value={emergencyContactNumber}
-            keyboardType={"phone-pad"}
+            keyboardType={'phone-pad'}
             onChangeText={v => {
               setEmergencyContactNumber(v);
               setError('');

@@ -18,6 +18,12 @@ import PaymentSuccessScreen from '../screens/Package/PaymentSuccessScreen';
 import ClassHistory from '../screens/Classes/Teacher/ClassHistory';
 import WaitlistScreen from '../screens/Classes/Teacher/WaitlistScreen';
 import BookingScreen from '../screens/Classes/Teacher/BookingScreen';
+import ProductsScreen from '../screens/Merchandise/ProductsScreen';
+import ProductDetailsScreen from '../screens/Merchandise/ProductDetailsScreen';
+import MyCartScreen from '../screens/Merchandise/MyCartScreen';
+import CheckoutScreen from '../screens/Merchandise/CheckoutScreen';
+import ChatRoom from '../screens/Chat/ChatRoom';
+import NewLeaveScreen from '../screens/Leave/NewLeave';
 
 const Stack = createNativeStackNavigator();
 
@@ -138,6 +144,48 @@ const AppNavigator = () => (
     <Stack.Screen
       name="BookingScreen"
       component={BookingScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ProductsScreen"
+      component={ProductsScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ProductDestail"
+      component={ProductDetailsScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="MyCart"
+      component={MyCartScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="Checkout"
+      component={CheckoutScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="ChatRoom"
+      component={ChatRoom}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="NewLeave"
+      component={NewLeaveScreen}
       options={{
         headerShown: false,
       }}

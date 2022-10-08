@@ -23,13 +23,13 @@ export default function CustomTab({
         height: wp(18),
         // paddingTop: wp(0.2),
         alignItems: 'center',
-        justifyContent:"center",
-        borderRadius: wp(18/2),
+        justifyContent: 'center',
+        borderRadius: wp(18 / 2),
         backgroundColor: isFocused ? theme.custom.white : theme.custom.green,
       }}>
       {isFocused ? (
         <Image
-          source={ activeImage }
+          source={activeImage}
           style={[{height: wp(6), width: wp(6)}, activeStyles]}
           resizeMode="contain"
         />
@@ -42,8 +42,11 @@ export default function CustomTab({
       )}
       <Text
         style={{
-          fontSize: getFontSize(9.3),
-          fontFamily:"Rubik-Regular",
+          fontSize:
+            title == 'Merchandise' && isFocused
+              ? getFontSize(8.5)
+              : getFontSize(9.3),
+          fontFamily: 'Rubik-Regular',
           marginTop: wp(1),
           color: isFocused ? theme.custom.green : theme.custom.white,
         }}>

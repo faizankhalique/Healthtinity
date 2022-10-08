@@ -18,6 +18,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import {Body17, Label11Light} from '../../components/AppText';
 import theme from '../../config/theme';
 import AppTextInput from '../../components/AppTextInput';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const items = [
   {
     key: 1,
@@ -159,8 +160,9 @@ const _renderItem = ({item}) => {
   );
 };
 
-export default function HomeScreen() {
-  const layout = useWindowDimensions();
+export default function HomeScreen({navigation}) {
+  const insets = useSafeAreaInsets();
+  const statusBarHeight = insets.top;
   const [value, setValue] = useState('');
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
@@ -171,13 +173,19 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topRow}>
+      <View
+        style={[
+          styles.topRow,
+          {marginTop: Platform.OS == 'ios' ? statusBarHeight + wp(2) : wp(4)},
+        ]}>
         <Body17 style={{color: theme.brand.primary}}>Hi Trinity !</Body17>
-        <Image
-          source={require('../../assets/chat-icon.png')}
-          resizeMode="contain"
-          style={{height: wp(8), width: wp(8)}}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('ChatRoom', null)}>
+          <Image
+            source={require('../../assets/chat-icon.png')}
+            resizeMode="contain"
+            style={{height: wp(8), width: wp(8)}}
+          />
+        </TouchableOpacity>
       </View>
       <AppTextInput
         textInputContainerStyle={{
@@ -241,6 +249,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: wp(15),
   },
 });

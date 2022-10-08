@@ -19,23 +19,26 @@ export default function LoginScreen({navigation}) {
   const [error, setError] = useState('');
 
   const handleSubmit = () => {
-    navigation.navigate('TeacherHome', {});
-    // if (!email) {
-    //   setError('Please enter email');
-    //   return;
-    // }
-    // if (!isValidEmail(email)) {
-    //   setError('Please enter valid email');
-    //   return;
-    // } else if (!password) {
-    //   setError('Please enter Password');
-    //   return;
-    // } else {
-    //   setEmail('');
-    //   setPassword('');
-    //   setError('');
-    // navigation.navigate('TeacherHome', {});
-    // }
+    if (!email) {
+      setError('Please enter email');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      setError('Please enter valid email');
+      return;
+    } else if (!password) {
+      setError('Please enter Password');
+      return;
+    } else {
+      if (email === 'student@gmail.com') {
+        navigation.navigate('StudentHome', {});
+      } else {
+        navigation.navigate('TeacherHome', {});
+      }
+      setEmail('');
+      setPassword('');
+      setError('');
+    }
   };
   return (
     <View style={styles.container}>
