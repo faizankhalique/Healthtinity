@@ -47,116 +47,121 @@ export default function ChatRoom() {
           }}
         />
       </View>
-      <ImageBackground
-        style={{flex: 1}}
-        source={require('../../assets/ChatBackground.jpg')}>
-        <View
-          style={{
-            flex: 1,
-            paddingHorizontal: wp(4),
 
-            backgroundColor: theme.ui.overlay,
-            position: 'relative',
-          }}>
-          <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
-            <View
-              style={{
-                marginTop: wp(8),
-                width: wp('80%'),
-                minHeight: wp(20),
-                justifyContent: 'center',
-                // alignItems: 'center',
-                backgroundColor: 'rgba(38,50,56,255)',
-                borderRadius: wp(4),
-                paddingHorizontal: wp(4),
-              }}>
-              <Image
-                source={require('../../assets/p1.png')}
-                style={{
-                  position: 'absolute',
-                  top: wp(-6),
-                  left: wp(-3),
-                  height: wp(8),
-                  width: wp(8),
-                }}
-                resizeMode="contain"
-              />
-              <Body14 style={{}}>Hello, How may we help you ?</Body14>
-            </View>
-            {messages.map((m, i) => (
-              <View
-                key={i}
-                style={{
-                  width: wp('80%'),
-                  minHeight: wp(20),
-                  marginTop: wp(5),
-                  alignSelf: 'flex-end',
-                  borderRadius: wp(4),
-                  justifyContent: 'center',
-                  paddingHorizontal: wp(4),
-                  backgroundColor: theme.brand.primary,
-                }}>
-                <Image
-                  source={require('../../assets/P2.png')}
-                  style={{
-                    position: 'absolute',
-                    top: wp(-8.2),
-                    right: wp(-5.5),
-                    height: wp(11),
-                    width: wp(11),
-                  }}
-                  resizeMode="contain"
-                />
-                <Body14>{m}</Body14>
-              </View>
-            ))}
-          </ScrollView>
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: wp(4),
+
+          backgroundColor: theme.ui.backgroundWhite,
+          position: 'relative',
+        }}>
+        <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
           <View
             style={{
-              position: 'absolute',
-              flexDirection: 'row',
-              bottom: 20,
-              alignSelf: 'center',
-              alignItems: 'center',
-              backgroundColor: 'white',
-              height: wp(14),
-              width: '95%',
+              marginTop: wp(8),
+              width: wp('80%'),
+              minHeight: wp(20),
+              justifyContent: 'center',
+              // alignItems: 'center',
+              backgroundColor: 'rgba(38,50,56,255)',
               borderRadius: wp(4),
-              paddingHorizontal: wp(3),
+              paddingHorizontal: wp(4),
             }}>
             <Image
-              source={require('../../assets/smile.png')}
+              source={require('../../assets/p1.png')}
               style={{
-                height: wp(6),
-                width: wp(6),
+                position: 'absolute',
+                top: wp(-6),
+                left: wp(-3),
+                height: wp(8),
+                width: wp(8),
               }}
               resizeMode="contain"
             />
-            <TextInput
-              placeholder="Message"
-              value={message}
-              placeholderTextColor={'#B3B3B3'}
+            <Body14 style={{}}>Hello, How may we help you ?</Body14>
+          </View>
+          {messages.map((m, i) => (
+            <View
+              key={i}
               style={{
-                flex: 1,
-                height: wp(12),
-                width: '100%',
-                marginLeft: wp(4),
-              }}
-              onChangeText={t => setMessage(t)}
-            />
-            <TouchableOpacity onPress={handlePress}>
+                width: wp('80%'),
+                minHeight: wp(20),
+                marginTop: wp(5),
+                alignSelf: 'flex-end',
+                borderRadius: wp(4),
+                justifyContent: 'center',
+                paddingHorizontal: wp(4),
+                backgroundColor: theme.brand.primary,
+              }}>
               <Image
-                source={require('../../assets/pen.png')}
+                source={require('../../assets/P2.png')}
                 style={{
-                  height: wp(6),
-                  width: wp(6),
+                  position: 'absolute',
+                  top: wp(-8.2),
+                  right: wp(-5.5),
+                  height: wp(11),
+                  width: wp(11),
                 }}
                 resizeMode="contain"
               />
-            </TouchableOpacity>
-          </View>
+              <Body14>{m}</Body14>
+            </View>
+          ))}
+        </ScrollView>
+        <View
+          style={{
+            position: 'absolute',
+            flexDirection: 'row',
+            bottom: 20,
+            alignSelf: 'center',
+            alignItems: 'center',
+            backgroundColor: 'white',
+            height: wp(14),
+            width: '95%',
+            borderRadius: wp(4),
+            paddingHorizontal: wp(3),
+            shadowOffset: {
+              width: 0,
+              height: 4,
+            },
+            shadowOpacity: 0.32,
+            shadowRadius: 5.46,
+
+            elevation: 9,
+          }}>
+          <Image
+            source={require('../../assets/smile.png')}
+            style={{
+              height: wp(6),
+              width: wp(6),
+            }}
+            resizeMode="contain"
+          />
+          <TextInput
+            placeholder="Message"
+            value={message}
+            placeholderTextColor={'#B3B3B3'}
+            style={{
+              flex: 1,
+              height: wp(12),
+              width: '100%',
+              marginLeft: wp(4),
+            }}
+            onChangeText={t => setMessage(t)}
+          />
+          <TouchableOpacity onPress={handlePress}>
+            <Image
+              source={require('../../assets/send-icon.png')}
+              style={{
+                height: wp(9),
+                width: wp(9),
+              }}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
         </View>
-      </ImageBackground>
+      </View>
     </View>
   );
 }

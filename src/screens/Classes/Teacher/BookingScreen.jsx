@@ -113,6 +113,7 @@ const ClassItem = ({title, teacherName, date, location, onBook}) => {
             justifyContent: 'space-between',
             alignItems: 'flex-end',
             height: '100%',
+            paddingVertical: wp(1.5),
           }}>
           <View />
           <AppButton
@@ -120,6 +121,7 @@ const ClassItem = ({title, teacherName, date, location, onBook}) => {
             buttonStyles={{
               height: wp(6.5),
               width: wp(22),
+              borderRadius: wp(1.2),
             }}
             textStyles={{
               fontSize: getFontSize(11.5),

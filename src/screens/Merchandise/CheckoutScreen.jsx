@@ -105,7 +105,7 @@ export default function CheckoutScreen({navigation, route}) {
       <AppButton
         title={'PAY NOW'}
         onPress={() => {
-          navigation.navigate('Merchandise', null);
+          navigation.navigate('PaymentSuccess2', null);
         }}
         buttonStyles={{
           width: '92%',

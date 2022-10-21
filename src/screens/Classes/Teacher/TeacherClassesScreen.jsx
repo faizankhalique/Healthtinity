@@ -127,6 +127,7 @@ const ClassItem = ({title, teacherName, date, location}) => {
             buttonStyles={{
               height: wp(6.5),
               width: wp(22),
+              borderRadius: wp(1),
             }}
             textStyles={{
               fontSize: getFontSize(11.5),
@@ -154,7 +155,7 @@ export default function ClassScreen({navigation}) {
           title={'History'}
           noShadow
           buttonStyles={{
-            borderRadius: 0,
+            // borderRadius: 0,
             height: wp(8),
             width: wp(25),
             right: wp(2),
@@ -199,7 +200,7 @@ export default function ClassScreen({navigation}) {
               buttonStyles={{
                 height: wp(14.5),
                 width: '46%',
-                borderRadius: 0,
+                // borderRadius: 0,
               }}
               textStyles={{
                 fontSize: getFontSize(16.5),
@@ -214,7 +215,7 @@ export default function ClassScreen({navigation}) {
               buttonStyles={{
                 height: wp(14.5),
                 width: '46%',
-                borderRadius: 0,
+                // borderRadius: 0,
               }}
               textStyles={{
                 fontSize: getFontSize(16.5),

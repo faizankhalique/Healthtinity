@@ -19,7 +19,7 @@ import AppTextInput from '../../components/AppTextInput';
 import AppButton from '../../components/AppButton';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation, route}) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -78,7 +78,7 @@ export default function LoginScreen() {
       setEmergencyContactName('');
       setEmergencyContactNumber('');
       setError('');
-      // navigation.navigate('LoginScreen', {});
+      if (route?.params?.LoginScreen) navigation.navigate('LoginScreen', {});
     }
   };
   return (

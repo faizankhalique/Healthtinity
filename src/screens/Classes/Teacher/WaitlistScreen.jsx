@@ -63,92 +63,92 @@ const classes = [
 ];
 const ClassItem = ({title, teacherName, date, location, onCancel}) => {
   return (
-    <>
-      <View
-        style={[
-          {
-            marginVertical: wp(1.5),
-            // paddingVertical: wp(3),
-            paddingLeft: wp(3),
-            backgroundColor: 'rgba(48, 139, 133, 0.08)',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            height: wp(26),
-          },
-        ]}>
-        <View>
-          <Label17
-            style={{
-              color: theme.brand.primary,
-              fontFamily: 'Rubik-Regular',
-            }}>
-            {title}
-          </Label17>
-          <Label13Light
-            style={{
-              color: 'black',
-              fontFamily: 'Rubik-Light',
-              marginTop: wp(1.5),
-            }}>
-            {teacherName}
-          </Label13Light>
-          <Label13Light
-            style={{
-              color: 'black',
-              fontFamily: 'Rubik-Light',
-              marginTop: wp(1),
-            }}>
-            {date}
-          </Label13Light>
-          <Label13Light
-            style={{
-              color: 'black',
-              fontFamily: 'Rubik-Light',
-              marginTop: wp(1),
-            }}>
-            {location}
-          </Label13Light>
-        </View>
-
-        <View
+    <View
+      style={[
+        {
+          marginVertical: wp(1.5),
+          // paddingVertical: wp(3),
+          paddingHorizontal: wp(3),
+          backgroundColor: 'rgba(48, 139, 133, 0.08)',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: wp(26),
+        },
+      ]}>
+      <View>
+        <Label17
           style={{
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            height: '100%',
+            color: theme.brand.primary,
+            fontFamily: 'Rubik-Regular',
           }}>
-          <AppButton
-            variant={'outlined'}
-            noShadow
-            buttonStyles={{
-              height: wp(5.5),
-              width: wp(16),
-              padding: 0,
-              backgroundColor: '#FFFFFF',
-              borderRadius: 0,
-            }}
-            textStyles={{
-              fontSize: getFontSize(9),
-              fontFamily: 'Rubik-Regular',
-            }}
-            title={'Waiting'}
-          />
-          <AppButton
-            noShadow
-            buttonStyles={{
-              height: wp(6.5),
-              width: wp(22),
-            }}
-            textStyles={{
-              fontSize: getFontSize(11.5),
-              fontFamily: 'Rubik-Regular',
-            }}
-            title={'Cancel'}
-            onPress={onCancel}
-          />
-        </View>
+          {title}
+        </Label17>
+        <Label13Light
+          style={{
+            color: 'black',
+            fontFamily: 'Rubik-Light',
+            marginTop: wp(1.5),
+          }}>
+          {teacherName}
+        </Label13Light>
+        <Label13Light
+          style={{
+            color: 'black',
+            fontFamily: 'Rubik-Light',
+            marginTop: wp(1),
+          }}>
+          {date}
+        </Label13Light>
+        <Label13Light
+          style={{
+            color: 'black',
+            fontFamily: 'Rubik-Light',
+            marginTop: wp(1),
+          }}>
+          {location}
+        </Label13Light>
       </View>
-    </>
+
+      <View
+        style={{
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          height: '100%',
+          paddingVertical: wp(2),
+        }}>
+        <AppButton
+          variant={'outlined'}
+          noShadow
+          buttonStyles={{
+            height: wp(5.5),
+            width: wp(16),
+            padding: 0,
+            backgroundColor: '#FFFFFF',
+            borderRadius: 0,
+          }}
+          textStyles={{
+            fontSize: getFontSize(9),
+            fontFamily: 'Rubik-Regular',
+          }}
+          title={'Waiting'}
+        />
+        <AppButton
+          noShadow
+          buttonStyles={{
+            height: wp(6.5),
+            width: wp(22),
+            borderRadius: wp(1),
+          }}
+          textStyles={{
+            fontSize: getFontSize(11.5),
+            fontFamily: 'Rubik-Regular',
+          }}
+          title={'Cancel'}
+          onPress={onCancel}
+        />
+      </View>
+    </View>
   );
 };
 export default function WaitlistScreen({route}) {

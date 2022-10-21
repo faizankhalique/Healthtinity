@@ -24,6 +24,7 @@ import MyCartScreen from '../screens/Merchandise/MyCartScreen';
 import CheckoutScreen from '../screens/Merchandise/CheckoutScreen';
 import ChatRoom from '../screens/Chat/ChatRoom';
 import NewLeaveScreen from '../screens/Leave/NewLeave';
+import PaymentSuccessScreen2 from '../screens/Merchandise/PaymentSuccessScreen2';
 
 const Stack = createNativeStackNavigator();
 
@@ -123,6 +124,13 @@ const AppNavigator = () => (
     <Stack.Screen
       name="PaymentSuccess"
       component={PaymentSuccessScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="PaymentSuccess2"
+      component={PaymentSuccessScreen2}
       options={{
         headerShown: false,
       }}

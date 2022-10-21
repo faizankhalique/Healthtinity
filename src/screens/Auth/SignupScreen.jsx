@@ -44,7 +44,7 @@ export default function SignupScreen({navigation}) {
       setEmail('');
       setPassword('');
       setError('');
-      navigation.navigate('LoginScreen', {});
+      navigation.navigate('EditProfile', {LoginScreen: true});
     }
   };
   return (
@@ -54,7 +54,7 @@ export default function SignupScreen({navigation}) {
         <AppTextInput
           placeholder={'Email'}
           autoCapitalize={'none'}
-          keyboardType={"email-address"}
+          keyboardType={'email-address'}
           autoCorrect={false}
           value={email}
           onChangeText={v => {

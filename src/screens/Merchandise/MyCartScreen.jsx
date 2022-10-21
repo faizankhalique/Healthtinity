@@ -129,7 +129,7 @@ export default function MyCartScreen({navigation}) {
             Total
           </Label17Light>
           <Label17Light style={{color: theme.brand.primary}}>
-            200:00
+            SGD$ 200:00
           </Label17Light>
         </View>
         <View
@@ -144,7 +144,7 @@ export default function MyCartScreen({navigation}) {
             Delivery fee
           </Label17Light>
           <Label17Light style={{color: theme.brand.primary}}>
-            20:00
+            SGD$ 20:00
           </Label17Light>
         </View>
         <View
@@ -167,7 +167,7 @@ export default function MyCartScreen({navigation}) {
             Sub Total
           </Label17Light>
           <Label17Light style={{color: theme.brand.primary}}>
-            220:00
+            SGD$ 220:00
           </Label17Light>
         </View>
         <AppButton

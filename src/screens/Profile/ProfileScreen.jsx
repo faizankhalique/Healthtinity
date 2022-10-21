@@ -57,7 +57,7 @@ export default function ProfileScreen({navigation}) {
       <AppButton
         image={require('../../assets/edit_pen.png')}
         onPress={() => {
-          navigation.navigate('EditProfile', null);
+          navigation.navigate('EditProfile', {LoginScreen: false});
         }}
         title={'Edit Profile'}
         buttonStyles={{alignSelf: 'center', width: wp('40%')}}
@@ -65,11 +65,9 @@ export default function ProfileScreen({navigation}) {
       <View style={{marginTop: wp(13), marginBottom: wp(12)}}>
         <ProfileItem image={require('../../assets/vector.png')}>
           <View>
-            <Body15 style={{color: 'black'}}>
-              Package Purchased : Unlimited
-            </Body15>
+            <Body15 style={{color: 'black'}}>Sessions Purchased : 50</Body15>
             <Body15 style={{color: 'black', marginTop: wp(3)}}>
-              Sessions Left : Unlimited
+              Sessions Left : 48
             </Body15>
           </View>
         </ProfileItem>

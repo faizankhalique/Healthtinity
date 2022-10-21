@@ -50,10 +50,10 @@ export default function WelcomeScreen2({navigation}) {
   return (
     <ImageBackground
       style={styles.imageBackground}
-      // resizeMode={"cover"}
+      // resizeMode={""}
       source={require('../../assets/wellcomeBackground.jpg')}>
       <View style={{flex: 1, backgroundColor: theme.ui.overlayLight}}>
-        <AppIntroSlider
+        {/* <AppIntroSlider
           renderItem={_renderItem}
           data={slides}
           onDone={_onDone}
@@ -71,7 +71,7 @@ export default function WelcomeScreen2({navigation}) {
             height: wp(1),
             bottom: wp(14),
           }}
-        />
+        /> */}
         <View
           style={{
             width: '100%',

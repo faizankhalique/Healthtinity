@@ -7,7 +7,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import {Label12Light, Body13} from '../../components/AppText';
+import {Label12Light, Body14} from '../../components/AppText';
 import theme from '../../config/theme';
 import AppButton from '../../components/AppButton';
 import AppHeader from '../../components/AppHeader';
@@ -25,17 +25,17 @@ export default function TermsAndConditions({navigation, route}) {
       <ScrollView
         style={{paddingHorizontal: wp(6), paddingVertical: wp(2)}}
         showsVerticalScrollIndicator={false}>
-        <Body13
+        <Body14
           style={{
             color: 'black',
             fontFamily: 'Rubik-Light',
             textAlign: 'left',
-            lineHeight: wp(5),
+            lineHeight: wp(6.7),
           }}>
           {
-            '1. Upon purchasing the membership, the client agrees to\n the following terms and conditions. \n2. You declare that you are physically fit for the session. \n3. You declare that you are mentally sound and will not\n cause injury to yourself and the surrounding individuals. \n4. You understands that you may face some challenging\n pose/s and understand your body limit well. If the pose faces\n some challenges you think will cause injury, you must exit\n the pose. \n5. You must declare all injuries beforehand to our teacher.\nHealthtinity will not be liable for any injury before, during and\n after the session. \n6. Healthtinity treats all harassment as a major offence.\nPlease maintain a proper code of conduct to all teachers and\n members. \n7. You will not hold Healthtinity responsible or liable in any\ncircumstances. \n8. Important : Results varies from individuals. Commitment is required on your part to see a breakthrough!'
+            '1. Upon purchasing the membership, the client agrees to the following terms and conditions. \n2. You declare that you are physically fit for the session. \n3. You declare that you are mentally sound and will not cause injury to yourself and the surrounding individuals. \n4. You understands that you may face some challenging pose/s and understand your body limit well. If the pose faces some challenges you think will cause injury, you must exit the pose. \n5. You must declare all injuries beforehand to our teacher.Healthtinity will not be liable for any injury before, during and after the session. \n6. Healthtinity treats all harassment as a major offence.Please maintain a proper code of conduct to all teachers and members. \n7. You will not hold Healthtinity responsible or liable in anycircumstances. \n8. Important : Results varies from individuals. Commitment is required on your part to see a breakthrough!'
           }
-        </Body13>
+        </Body14>
         <View style={styles.checkboxContainer}>
           <CheckBox
             boxType="square"
@@ -50,7 +50,7 @@ export default function TermsAndConditions({navigation, route}) {
             onTintColor={theme.custom.green}
           />
           <Label12Light style={styles.label}>
-            I have read through the T and C
+            I have read through the Terms and Conditions
           </Label12Light>
         </View>
         <AppButton
