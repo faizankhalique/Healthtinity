@@ -55,6 +55,7 @@ export default function ChatRoom() {
 
           backgroundColor: theme.ui.backgroundWhite,
           position: 'relative',
+          // paddingBottom: wp(40),
         }}>
         <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
           <View
@@ -108,6 +109,7 @@ export default function ChatRoom() {
               <Body14>{m}</Body14>
             </View>
           ))}
+          <View style={{paddingBottom: wp(30)}} />
         </ScrollView>
         <View
           style={{
