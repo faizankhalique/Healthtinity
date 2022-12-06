@@ -5,6 +5,8 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
+  Platform,
+  KeyboardAvoidingView,
 } from 'react-native';
 import React, {useState} from 'react';
 import {
@@ -83,120 +85,128 @@ export default function LoginScreen({navigation, route}) {
   };
   return (
     <View style={styles.container}>
-      <ScrollView
-        style={{flex: 1}}
-        contentContainerStyle={{paddingBottom: wp(20)}}
-        showsVerticalScrollIndicator={false}>
-        <Label19 style={styles.profileLabel}>Update Profile Details</Label19>
-        <View style={{paddingVertical: wp(8)}}>
-          <AppTextInput
-            placeholder={'First Name'}
-            value={firstName}
-            onChangeText={v => {
-              setFirstName(v);
-              setError('');
-            }}
-          />
-          <AppTextInput
-            placeholder={'Last Name'}
-            value={lastName}
-            onChangeText={v => {
-              setLastName(v);
-              setError('');
-            }}
-          />
-          <Label11Light style={{color: theme.custom.green, top: wp(2)}}>
-            {'Date Of Birth'}
-          </Label11Light>
-          <TouchableOpacity
-            style={{
-              backgroundColor: 'white',
-              borderColor: theme.custom.green,
-              borderWidth: 1.5,
-              color: '#636F82',
-              borderRadius: wp(1),
-              marginVertical: wp(3),
-              height: wp(10.5),
-              paddingHorizontal: wp(2),
-              paddingRight: 11,
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexDirection: 'row',
-              shadowOffset: {
-                width: 0,
-                height: 1,
-              },
-              shadowOpacity: 0.22,
-              shadowRadius: 2.22,
-
-              elevation: 3,
-            }}
-            onPress={() => {
-              setCalender(true);
-            }}>
-            {dateShow ? (
-              <Text style={{color: 'black'}}>{dateShow}</Text>
-            ) : (
-              <Text style={{color: '#B3B3B3'}}>mm/dd/yy</Text>
-            )}
-
-            <DateTimePickerModal
-              isVisible={showCalender}
-              mode="date"
-              onConfirm={date => {
-                onDateChange(date);
+      <KeyboardAvoidingView
+        style={{flex: 1, width: '100%'}}
+        behavior={Platform.OS === 'ios' ? 'padding' : ''}>
+        <ScrollView
+          style={{flex: 1}}
+          contentContainerStyle={{paddingBottom: wp(20)}}
+          showsVerticalScrollIndicator={false}>
+          <Label19 style={styles.profileLabel}>Update Profile Details</Label19>
+          <View style={{paddingVertical: wp(8)}}>
+            <AppTextInput
+              placeholder={'First Name'}
+              value={firstName}
+              onChangeText={v => {
+                setFirstName(v);
                 setError('');
               }}
-              onCancel={hideDatePicker}
             />
-            <Image
-              style={{height: 20, width: 20}}
-              resizeMode="contain"
-              source={require('../../assets/chevron.png')}
+            <AppTextInput
+              placeholder={'Last Name'}
+              value={lastName}
+              onChangeText={v => {
+                setLastName(v);
+                setError('');
+              }}
             />
-          </TouchableOpacity>
-          <AppTextInput
-            placeholder={'Phone Number'}
-            value={phoneNumber}
-            keyboardType={'phone-pad'}
-            onChangeText={v => {
-              setPhoneNumber(v);
-              setError('');
-            }}
+            <Label11Light style={{color: theme.custom.green, top: wp(2)}}>
+              {'Date Of Birth'}
+            </Label11Light>
+            <TouchableOpacity
+              style={{
+                backgroundColor: 'white',
+                borderColor: theme.custom.green,
+                borderWidth: 1.5,
+                color: '#636F82',
+                borderRadius: wp(1),
+                marginVertical: wp(3),
+                height: wp(10.5),
+                paddingHorizontal: wp(2),
+                paddingRight: 11,
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexDirection: 'row',
+                shadowOffset: {
+                  width: 0,
+                  height: 1,
+                },
+                shadowOpacity: 0.22,
+                shadowRadius: 2.22,
+
+                elevation: 3,
+              }}
+              onPress={() => {
+                setCalender(true);
+              }}>
+              {dateShow ? (
+                <Text style={{color: 'black'}}>{dateShow}</Text>
+              ) : (
+                <Text style={{color: '#B3B3B3'}}>mm/dd/yy</Text>
+              )}
+
+              <DateTimePickerModal
+                isVisible={showCalender}
+                mode="date"
+                onConfirm={date => {
+                  onDateChange(date);
+                  setError('');
+                }}
+                onCancel={hideDatePicker}
+              />
+              <Image
+                style={{height: 20, width: 20}}
+                resizeMode="contain"
+                source={require('../../assets/chevron.png')}
+              />
+            </TouchableOpacity>
+            <AppTextInput
+              placeholder={'Phone Number'}
+              value={phoneNumber}
+              keyboardType={'phone-pad'}
+              onChangeText={v => {
+                setPhoneNumber(v);
+                setError('');
+              }}
+            />
+            <AppTextInput
+              placeholder={'Home Address'}
+              value={homeAddress}
+              onChangeText={v => {
+                setHomeAddress(v);
+                setError('');
+              }}
+            />
+            <AppTextInput
+              placeholder={'Emergency Contact Name'}
+              value={emergencyContactName}
+              onChangeText={v => {
+                setEmergencyContactName(v);
+                setError('');
+              }}
+            />
+            <AppTextInput
+              placeholder={'Emergency Contact Number'}
+              value={emergencyContactNumber}
+              keyboardType={'phone-pad'}
+              onChangeText={v => {
+                setEmergencyContactNumber(v);
+                setError('');
+              }}
+            />
+            {error && (
+              <Label8Light style={{color: '#DC1D1D', marginBottom: wp(2)}}>
+                {error}
+              </Label8Light>
+            )}
+          </View>
+          <AppButton
+            onPress={handleSubmit}
+            title={'Submit'}
+            buttonStyles={{}}
           />
-          <AppTextInput
-            placeholder={'Home Address'}
-            value={homeAddress}
-            onChangeText={v => {
-              setHomeAddress(v);
-              setError('');
-            }}
-          />
-          <AppTextInput
-            placeholder={'Emergency Contact Name'}
-            value={emergencyContactName}
-            onChangeText={v => {
-              setEmergencyContactName(v);
-              setError('');
-            }}
-          />
-          <AppTextInput
-            placeholder={'Emergency Contact Number'}
-            value={emergencyContactNumber}
-            keyboardType={'phone-pad'}
-            onChangeText={v => {
-              setEmergencyContactNumber(v);
-              setError('');
-            }}
-          />
-          {error && (
-            <Label8Light style={{color: '#DC1D1D', marginBottom: wp(2)}}>
-              {error}
-            </Label8Light>
-          )}
-        </View>
-        <AppButton onPress={handleSubmit} title={'Submit'} buttonStyles={{}} />
-      </ScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 }

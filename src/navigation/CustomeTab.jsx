@@ -44,8 +44,8 @@ export default function CustomTab({
         style={{
           fontSize:
             title == 'Merchandise' && isFocused
-              ? getFontSize(8.5)
-              : getFontSize(9.3),
+              ? getFontSize(8)
+              : getFontSize(9),
           fontFamily: 'Rubik-Regular',
           marginTop: wp(1),
           color: isFocused ? theme.custom.green : theme.custom.white,
